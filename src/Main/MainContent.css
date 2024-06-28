@@ -1,0 +1,17 @@
+/* src/components/MainContent.css */
+.main-content {
+  margin-left: 220px;
+  padding: 20px;
+  text-align: center;
+}
+
+.card-logo {
+  display: inline-block;
+}
+
+.card-logo img {
+  width: 150px;
+  height: auto;
+  background: none; /* Remove any background */
+  border: none; /* Remove any borders */
+}

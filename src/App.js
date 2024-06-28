@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useContext } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { MLB, NFL, MTG, Yugioh, Pokemon } from "./Pages";
+import Header from "./Header/Header";
+import Navbar from "./Navbar/Navbar";
+import MainContent from "./Main/MainContent";
+import ThemeProvider, { ThemeContext } from "./Theme/ThemeContent";
+import "./index.css";
+const ThemeToggle = () => {
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
-function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <label className="theme-toggle-container">
+      <input
+        type="checkbox"
+        className="theme-toggle-checkbox"
+        onChange={toggleTheme}
+        checked={theme === "dark"}
+      />
+      <span className="theme-toggle-slider">Light Dark</span>
+    </label>
   );
-}
+};
+
+const App = () => {
+  return (
+    <ThemeProvider>
+      <Router>
+        <div className="app">
+          <Header />
+          <ThemeToggle />
+          <Navbar />
+          <div className="content">
+            <Routes>
+              <Route path="/" element={<MainContent />} />
+              <Route path="/mlb" element={<MLB />} />
+              <Route path="/nfl" element={<NFL />} />
+              <Route path="/pokemon" element={<Pokemon />} />
+              <Route path="/mtg" element={<MTG />} />
+              <Route path="/yugioh" element={<Yugioh />} />
+            </Routes>
+          </div>
+        </div>
+      </Router>
+    </ThemeProvider>
+  );
+};
 
 export default App;
