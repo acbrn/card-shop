@@ -1,22 +1,22 @@
 :root {
-  --bg-color: white;
+  --bg-color: rgb(82, 82, 82);
   --text-color: black;
   --nav-bg-color: #333;
-  --nav-text-color: white;
+  --nav-text-color: rgb(82, 82, 82);
 }
 
 [data-theme="dark"] {
   --bg-color: #333;
   --text-color: white;
   --nav-bg-color: #222;
-  --nav-text-color: white;
+  --nav-text-color: rgb(255, 255, 255);
 }
 
 [data-theme="light"] {
   --bg-color: white;
   --text-color: black;
-  --nav-bg-color: #333;
-  --nav-text-color: white;
+  --nav-bg-color: #ffffff;
+  --nav-text-color: rgb(63, 63, 63);
 }
 
 body {

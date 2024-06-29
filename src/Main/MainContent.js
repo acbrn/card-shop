@@ -30,6 +30,7 @@ const MainContent = () => {
 
   return (
     <main className="main-content">
+      <div className="main-content-div">Look at what we carry</div>
       <div className="card-logo">
         <a href={currentImage.link}>
           <img src={currentImage.src} alt={currentImage.alt} />

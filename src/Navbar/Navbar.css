@@ -1,31 +1,44 @@
-/* src/components/Navbar.css */
 .navbar {
-  width: 200px;
-  position: relative;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background-color: #333;
-  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 .navbar li {
-  margin: 10px 0;
+  padding: 8px;
+  position: relative;
 }
 
-.navbar a {
-  color: white;
-  text-decoration: none;
-  display: block;
-  padding: 10px;
-  font-size: 18px;
+.dropdown span {
+  cursor: pointer;
 }
 
-.navbar a.active {
-  background-color: #575757;
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: rgb(180, 31, 31);
+  padding: 8px;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  top: 100%;
+  left: 0;
+  white-space: nowrap;
+}
+
+.dropdown-menu li {
+  padding: 8px 16px;
+}
+
+.dropdown-menu li:hover {
+  background-color: #000000;
+}
+
+.active {
+  font-weight: bold;
 }
